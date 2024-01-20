@@ -9,7 +9,6 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/classTaskList"
         android:layout_width="match_parent"
-<<<<<<< Updated upstream
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -27,9 +26,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-=======
-        android:layout_height="wrap_content"/>
-
 </RelativeLayout>
->>>>>>> Stashed changes

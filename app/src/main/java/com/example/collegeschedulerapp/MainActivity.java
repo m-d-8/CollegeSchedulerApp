@@ -2,13 +2,10 @@ package com.example.collegeschedulerapp;
 
 import android.os.Bundle;
 import android.view.Menu;
-<<<<<<< Updated upstream
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-=======
 import android.view.View;
->>>>>>> Stashed changes
 
 import com.example.collegeschedulerapp.ui.slideshow.ClassTaskData;
 
@@ -49,28 +46,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        //setContentView(R.layout.fragment_slideshow);
-
-//        RecyclerView recyclerView = findViewById(R.id.classTaskList);
-//
-//        List<ClassTaskData> cTasks = new ArrayList<ClassTaskData>();
-//        cTasks.add(new ClassTaskData("Assignment 1","HTS 2053", "assignment",R.drawable.paper));
-//        cTasks.add(new ClassTaskData("Assignment 2","HTS 2053", "assignment",R.drawable.paper));
-//        cTasks.add(new ClassTaskData("Chapter 1 Readings","PSYC 1101", "assignment",R.drawable.paper));
-//        cTasks.add(new ClassTaskData("Pre-Lecture Recordings 5","MATH 1554", "assignment",R.drawable.paper));
-//        cTasks.add(new ClassTaskData("Midterm Exam","CS 2340", "exam",R.drawable.paper));
-//
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        recyclerView.setAdapter(new TaskAdapter(getApplicationContext(),cTasks));
 
         setSupportActionBar(binding.appBarMain.toolbar);
-//        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
