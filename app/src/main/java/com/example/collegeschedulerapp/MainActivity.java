@@ -1,23 +1,33 @@
 package com.example.collegeschedulerapp;
 
 import android.os.Bundle;
-import android.view.View;
 import android.view.Menu;
+<<<<<<< Updated upstream
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+=======
+import android.view.View;
+>>>>>>> Stashed changes
 
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.navigation.NavigationView;
+import com.example.collegeschedulerapp.ui.slideshow.ClassTaskData;
 
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.collegeschedulerapp.databinding.ActivityMainBinding;
+import com.example.collegeschedulerapp.ui.slideshow.TaskAdapter;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import java.util.ArrayList;
 
@@ -39,6 +49,20 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //setContentView(R.layout.fragment_slideshow);
+
+//        RecyclerView recyclerView = findViewById(R.id.classTaskList);
+//
+//        List<ClassTaskData> cTasks = new ArrayList<ClassTaskData>();
+//        cTasks.add(new ClassTaskData("Assignment 1","HTS 2053", "assignment",R.drawable.paper));
+//        cTasks.add(new ClassTaskData("Assignment 2","HTS 2053", "assignment",R.drawable.paper));
+//        cTasks.add(new ClassTaskData("Chapter 1 Readings","PSYC 1101", "assignment",R.drawable.paper));
+//        cTasks.add(new ClassTaskData("Pre-Lecture Recordings 5","MATH 1554", "assignment",R.drawable.paper));
+//        cTasks.add(new ClassTaskData("Midterm Exam","CS 2340", "exam",R.drawable.paper));
+//
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        recyclerView.setAdapter(new TaskAdapter(getApplicationContext(),cTasks));
+
         setSupportActionBar(binding.appBarMain.toolbar);
 //        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -58,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
     }
 
     @Override
