@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import com.example.collegeschedulerapp.databinding.FragmentClasstasksBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ClassTasksFragment extends Fragment {
@@ -29,6 +31,8 @@ public class ClassTasksFragment extends Fragment {
     private FragmentClasstasksBinding binding;
 
     private ClassTasksViewModel sharedViewModel;
+
+    private RecyclerView recyclerView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -65,7 +69,7 @@ public class ClassTasksFragment extends Fragment {
             }
         });
 
-        RecyclerView recyclerView = (RecyclerView) root.findViewById(R.id.classTaskList);
+        recyclerView = (RecyclerView) root.findViewById(R.id.classTaskList);
 
         ArrayList<ClassTaskData> cTasks = sharedViewModel.getClassTasks();
 
@@ -86,6 +90,22 @@ public class ClassTasksFragment extends Fragment {
                 int position = recyclerView.getChildLayoutPosition((View) v.getParent());
                 cTasks.remove(cTasks.get(position));
                 adapter.notifyItemRemoved(position);
+            }
+        });
+
+        // code for the sort function where we can either sort by due date or sort by course
+        Button buttonForSortDueDate = root.findViewById(R.id.btnSortByDueDate);
+        Button buttonForSortCourse = root.findViewById(R.id.btnSortByCourse);
+        buttonForSortDueDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sortClassTasksByDueDate();
+            }
+        });
+        buttonForSortCourse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sortClassTasksByCourse();
             }
         });
 
@@ -112,5 +132,16 @@ public class ClassTasksFragment extends Fragment {
         transaction.replace(R.id.classTaskContainer, classTaskForm);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    // methods usd to sort the assignments/exams
+    private void sortClassTasksByDueDate() {
+        Collections.sort(sharedViewModel.getClassTasks(), new CompareByDueDate());
+        recyclerView.getAdapter().notifyDataSetChanged();
+    }
+
+    private void sortClassTasksByCourse() {
+        Collections.sort(sharedViewModel.getClassTasks(), new CompareByCourse());
+        recyclerView.getAdapter().notifyDataSetChanged();
     }
 }

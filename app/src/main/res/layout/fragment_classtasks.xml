@@ -7,6 +7,29 @@
     android:id="@+id/classTaskContainer"
     tools:context=".ui.classtasks.ClassTasksFragment">
 
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/btnSortByDueDate"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Sort by Due Date"/>
+
+        <Button
+            android:id="@+id/btnSortByCourse"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Sort by Course"/>
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/classTaskList"
         android:layout_width="match_parent"
@@ -14,6 +37,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_below="@id/buttonsLayout"
         android:background="#FFFFFF"
         android:textAlignment="center"
         android:textSize="20sp"
