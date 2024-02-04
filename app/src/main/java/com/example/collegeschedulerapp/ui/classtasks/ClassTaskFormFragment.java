@@ -66,8 +66,9 @@ public class ClassTaskFormFragment extends Fragment{
         discardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-                fragmentManager.popBackStack();
+                //FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                //fragmentManager.popBackStack();
+                switchToClassTaskView();
             }
         });
 
@@ -93,10 +94,24 @@ public class ClassTaskFormFragment extends Fragment{
                 ArrayList<ClassTaskData> cTasks = sharedViewModel.getClassTasks();
                 ClassTasksViewModel.addToClassTasks(new ClassTaskData(classTaskNameText,classTaskTypeText,dateTimePickerText,coursePickerText,locationPickerText,R.drawable.paper));
 
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-                fragmentManager.popBackStack();
+                //FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                //fragmentManager.popBackStack();
+                switchToClassTaskView();
             }
         });
         return root;
+    }
+
+    public void switchToClassTaskView(){
+        ClassTasksFragment classTaskView = new ClassTasksFragment();
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        Fragment previousFragment = fragmentManager.findFragmentById(R.id.classTaskContainer);
+        if (previousFragment != null) {
+            transaction.remove(previousFragment);
+        }
+        transaction.replace(R.id.classTaskContainer, classTaskView);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
