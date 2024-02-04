@@ -12,4 +12,6 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="add">Add</string>
     <string name="toDo">to-do</string>
+    <string name="add_class">Add Class</string>
+    <string name="add_class_task">Add Class Task</string>
 </resources>
