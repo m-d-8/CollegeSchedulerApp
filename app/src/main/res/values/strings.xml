@@ -14,4 +14,28 @@
     <string name="toDo">to-do</string>
     <string name="add_class">Add Class</string>
     <string name="add_class_task">Add Class Task</string>
+
+
+
+
+
+
+    <string name="add_course_string">Add a Course</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="new_course">New Course</string>
+    <string name="course_name_string">Course Name:</string>
+    <string name="instructor_string">Instructor:</string>
+    <string name="days_string">Days:</string>
+    <string name="location_string">Location:</string>
+    <string name="time_string">Time:</string>
+    <string name="pap_string">A paper and pencil</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="arrive">Fragment I want to arrive to</string>
+    <string name="remove">remove</string>
+    <string name="save">Save</string>
+    <string name="plus">+</string>
+
+
 </resources>
