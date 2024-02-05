@@ -4,9 +4,4 @@
         android:id="@+id/addClassButton"
         android:title="@string/add_class_task"
         />
-
-    <item
-        android:id="@+id/addClassTaskButton"
-        android:title="@string/add_class"
-        />
 </menu>
